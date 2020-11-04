@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="shortcut icon" href="http://example.com/favicon.ico" />
+      <title>Chat</title>
+      <style>
+            .outer {
+                  width: 900px;
+                  margin: auto;
+            }
+
+            .messages {
+                  width: 390px;
+                  margin: 5px;
+                  height: 300px;
+                  background-color: aliceblue;
+                  border: 1px solid #000;
+            }
+
+            .room {
+                  width: 400px;
+                  margin: 5px;
+                  float: left;
+            }
+
+            .txt-send {
+                  width: 300px;
+                  margin: 5px;
+            }
+      </style>
+</head>
+
+<body>
+      <div class="outer">
+            <div class="room">
+                  <h4>Node</h4>
+                  <div class="messages" id="nMessages">
+                  </div>
+                  <!-- <form> -->
+                  <input type="text" name="nTxt" class="txt-send" id="nTxt">
+                  <input type="button" value="SEND" class="btn" id="nBtn">
+                  <!-- </form> -->
+            </div>
+
+            <div class="room">
+                  <h4>Python</h4>
+                  <div class="messages" id="pMessages">
+                  </div>
+                  <!-- <form> -->
+                  <input type="text" name="pTxt" class="txt-send" id="pTxt">
+                  <input type="button" value="SEND" class="btn" id="pBtn">
+                  <!-- </form> -->
+            </div>
+      </div>
+      <script src="/socket.io/socket.io.js"></script>
+      <script type="text/javascript">
+            var socket = io();
+
+            socket.on('connect', function () {
+
+                  let teacherId = '5d7a3a4b38ee382da821c0f9';
+
+                  socket.emit('getGroupList', teacherId)
+
+
+            })
+
+            socket.on('groupList', function (groupListData) {
+                  console.log(groupListData);
+            })
+
+            // socket.on('connect', function () {
+            //       var nRoom = "nRoom";
+            //       socket.emit('nRoom', nRoom);
+
+
+            //       var pRoom = "pRoom";
+            //       socket.emit('pRoom', pRoom);
+            // })
+
+            // var nBtn = document.getElementById('nBtn');
+            // var nTxt = document.getElementById('nTxt');
+            // var nMessages = document.getElementById('nMessages');
+
+            // nBtn.addEventListener('click', function () {
+            //       socket.emit('nodeNewMessage', nTxt.value)
+            // })
+
+            // nTXT.addEventListener('keypress', function () {
+            //       socket.emit('typing');
+            // })
+
+            // socket.on('nodeNew', function (msg) {
+            //       console.log("msgLocal:" + msg);
+            //       nMessages.innerHTML = nMessages.innerHTML + "<br />" + msg
+            // })
+
+            // socket.on('nodeNewUser', function (data) {
+            //       console.log("msgLocal:" + data);
+            //       nMessages.innerHTML = nMessages.innerHTML + "<br />" + data
+            // })
+
+            // var pBtn = document.getElementById('pBtn');
+            // var pTxt = document.getElementById('pTxt');
+            // var pMessages = document.getElementById('pMessages');
+
+            // pBtn.addEventListener('click', function () {
+            //       socket.emit('pythonNewMessage', pTxt.value)
+            // })
+
+            // socket.on('pythonNew', function (msg) {
+            //       pMessages.innerHTML = pMessages.innerHTML + "<br />" + msg
+            // })
+
+            // socket.on('pythonNewUser', function (data) {
+            //       pMessages.innerHTML = pMessages.innerHTML + "<br />" + data
+            // })
+      </script>
+</body>
+
+</html>

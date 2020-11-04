@@ -1,0 +1,45 @@
+{
+  "name": "schoolr",
+  "version": "1.0.0",
+  "description": "creating schoolr rest api for android and ios",
+  "main": "index.js",
+  "scripts": {
+    "test": "snyk test",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "swaroopbadarla"
+  },
+  "author": "Swaroop Badarla",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "date-diff": "^0.2.1",
+    "email-validator": "^2.0.4",
+    "express": "^4.17.1",
+    "firebase-admin": "^8.6.0",
+    "helmet": "^3.21.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.1",
+    "multer": "^1.4.2",
+    "node-cron": "^2.0.3",
+    "node-rsa": "^1.0.7",
+    "path": "^0.12.7",
+    "pdf-creator-node": "^1.4.1",
+    "randomatic": "^3.1.1",
+    "randomstring": "^1.1.5",
+    "request": "^2.88.0",
+    "socket.io": "^2.3.0",
+    "xml-js": "^1.6.11"
+  },
+  "devDependencies": {
+    "eslint-plugin-security": "^1.4.0",
+    "morgan": "^1.9.1",
+    "nodemon": "^2.0.3",
+    "snyk": "^1.398.1"
+  }
+}

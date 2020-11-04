@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {{#each subject}}
+  <title>{{this.mailSubject}}</title>
+  {{/each}}
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+  <h2 class="text-center" style="margin-bottom:30px; margin-left:-150px;text-decoration: underline;">
+    Mail</h2>
+  <!-- Subject of leaveLetter -->
+  {{#each fromUsers}}
+  <!-- <img src="{{this.url}}" class="img-fluid" alt="Responsive image" /> -->
+  <h5 style="margin-bottom:15px">From : {{this.user}}</h5>
+  {{/each}}
+
+
+  {{#each nameList}}
+  <!-- <img src="{{this.url}}" class="img-fluid" alt="Responsive image" /> -->
+  <h5 style="margin-bottom:15px">TO : {{this.userName}}</h5>
+  {{/each}}
+
+  <!-- <h5 style="margin-bottom:15px">CC :
+    {{#each copyToTeachers}}
+    <span>{{this.teacherName}}</span>
+    {{/each}}
+  </h5> -->
+
+  {{#each subject}}
+  <!-- <img src="{{this.url}}" class="img-fluid" alt="Responsive image" /> -->
+  <h5 style="margin-bottom:15px">Reason For Leave : {{this.mailSubject}}</h5>
+  {{/each}}
+
+  <hr />
+
+  <!-- <div style="margin-bottom:10px;display: block;">
+
+    <h5>
+      {{#each fromDate}} -->
+  <!-- <img src="{{this.url}}" class="img-fluid" alt="Responsive image" /> -->
+  <!-- <span>From : {{date}}</span>
+      {{/each}}
+
+      {{#each toDate}} -->
+  <!-- <img src="{{this.url}}" class="img-fluid" alt="Responsive image" /> -->
+  <!-- <span style="margin-left:450px;">To : {{date}}</span>
+      {{/each}}
+    </h5>
+
+  </div> -->
+
+  <div style="display: flex; width: 100%;margin-top:50px;margin-bottom:15px">
+    <h5>Dear Madam/Sir</h5>
+  </div>
+
+
+  <div style="margin-bottom:60px;">
+    {{#each messageData}}
+    <!-- <img src="{{this.url}}" class="img-fluid" alt="Responsive image" /> -->
+    <p>{{message}}</p>
+    {{/each}}
+  </div>
+
+
+  <h5 style="text-decoration: underline;margin-bottom:20px;">Attachements</h5>
+  {{#each leaveLetterUrls}}
+  <img src="{{this.url}}" class="img-fluid" alt="Responsive image" style="width:50%" />
+  {{/each}}
+
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
